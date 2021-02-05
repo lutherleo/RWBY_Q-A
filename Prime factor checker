@@ -1,0 +1,14 @@
+n = #number you want to check
+while n%2 ==0
+    puts "2"
+    n = n/2
+end
+for i in (3..Math.sqrt(n)).step(2).to_a
+    if n% i == 0
+        puts i
+        n = n/i
+    end
+end
+if n > 2 
+    puts n 
+end
