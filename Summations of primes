@@ -1,0 +1,28 @@
+prime = []
+n = 2000005
+for alpha in 0...n
+    prime[alpha] = true
+end
+p = 2
+while p*p <= n
+    if prime[p] == true
+        for i in (p*p...n).step(p)
+            prime[i] = false
+        end
+    end
+    p += 1
+end
+
+primes = []
+for p in 2...n
+    if prime[p] == true
+        primes << p
+    end
+end
+m = 0
+sum = 0
+while primes[m] < 2000000
+    sum += primes[m]
+    m+= 1
+end
+puts sum
