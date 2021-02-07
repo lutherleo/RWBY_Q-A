@@ -1,0 +1,13 @@
+thing = []
+for i in 100..1000
+    for j in 100..1000
+        prod = i*j
+        if prod.to_s.reverse.eql? prod.to_s
+            thing << prod
+        end
+    end
+end
+puts thing.sort.reverse
+
+
+
