@@ -1,0 +1,23 @@
+prime = []
+n = 1000000
+for alpha in 0...n
+    prime[alpha] = true
+end
+p = 2
+while p*p <= n
+    if prime[p] == true
+        for i in (p*p...n).step(p)
+            prime[i] = false
+        end
+    end
+    p += 1
+end
+
+primes = []
+for p in 2...n
+    if prime[p] == true
+        primes << p
+    end
+end
+
+puts primes[10000]
